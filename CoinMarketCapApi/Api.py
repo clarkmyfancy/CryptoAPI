@@ -1,9 +1,8 @@
-from requests import Request, Session
+from requests import Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import json
 
 from CoinMarketCapApi.Helpers import create_comma_seperated_string_from_list_of_strings
-import secrets
 
 class Api:
 
