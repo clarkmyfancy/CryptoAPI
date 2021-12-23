@@ -7,11 +7,17 @@ In order to do that you need an API-key
 It's like practicing good coding standards by not putting secrets in the code repo.
 In order to use the API you need a key
 
-Here are steps to get the program running:
-1. Navigate to CryptoAPI/CoinMarketCapApi and create a file called "secrets.json"
-1. Go to [the CoinMarketCap API website](https://coinmarketcap.com/api/) and create an api-key
+For security reasons, an API key should not be stored in the code repo, so you have to get your own.
+1. Go to [the CoinMarketCap API website](https://coinmarketcap.com/api/) and login to your Developers account. If you don't have one then create an account. 
+2. When you get logged in, go to the Overview Panel and find the API Key. The api won't work without it.  Copy The API key 
+3. Take that key and now in the project directory, navigate to CryptoAPI/CoinMarketCapApi and create a file called "secrets.json"
+4. Add the following code to that file.
 
-2.
-3. 
-  The 
-You will have to create a file called "secrets.json" and add it at the root of the CoinMarketCapApi folder. That is a json file that contains the secrets to allow you to use the coinmarketcap api. The shape of the json data should be => { "api-key" : "<this-is-your-secret-api-key>" }
+```
+{
+  "api-key": ""
+}
+
+```
+5. Copy the API Key you got from the CoinMarketCap site and paste it between the quotes. 
+6. Save that and now the api will work
