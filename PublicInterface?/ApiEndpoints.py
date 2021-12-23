@@ -4,6 +4,8 @@ import pandas as pd
 import ast
 import json
 
+from DataBridge.DataBridge import getCryptosOfInterest, getUsers
+
 
 app = Flask(__name__)
 api = Api(app)
@@ -11,17 +13,13 @@ api = Api(app)
 class Cryptos(Resource):
 
     def get(self):
-        file = open("Database/CryptosOfInterest.txt", "r")
-        contents = file.read()
-        file.close()
+        contents = getCryptosOfInterest()
         return { "data": contents }, 200
 
 class Users(Resource):
     
     def get(self):
-        file = open("Database/Users.txt", "r")
-        contents = file.read()
-        file.close()
+        contents = getUsers()
         return contents, 200
 
     def post(self):
