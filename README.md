@@ -1,7 +1,7 @@
 # CryptoAPI
 
 
-### Usage
+### Setup
 The API hits the coinmarketcap api. 
 In order to do that you need an API-key
 It's like practicing good coding standards by not putting secrets in the code repo.
