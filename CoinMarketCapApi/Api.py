@@ -2,47 +2,29 @@ from requests import Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import json
 
-from CoinMarketCapApi.Helpers import create_comma_seperated_string_from_list_of_strings
+from DataBridge.DataBridge import getApiKeySecrets, getCryptosOfInterest
+
 
 class Api:
 
     def __init__(self):
-        secrets = self.loadApiSecrets()
+
         self.headers = {
             'Accepts': 'application/json',
-            'X-CMC_PRO_API_KEY': secrets["api-key"],
+            'X-CMC_PRO_API_KEY': getApiKeySecrets(),
         }
         self.session = Session()
         self.session.headers.update(self.headers)
 
-        self.cryptos_of_interest = [
-            "BTC",
-            "ETH",
-            "ADA",
-            "LTC",
-            "SOL",
-            "HBAR",
-            "DOT",
-            "CHZ",
-            "AVAX",
-            "DOGE",
-            "MATIC"
-        ]
-
-    def loadApiSecrets(self):
-        file = open("CoinMarketCapApi/secrets.json")
-        secrets = json.load(file)
-        file.close()
-        return secrets
+        self.cryptos_of_interest = getCryptosOfInterest()
 
 
     def getQuotes(self):
 
         url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'  
-
-        cryptos = create_comma_seperated_string_from_list_of_strings(self.cryptos_of_interest)
+        
         parameters = {
-            'symbol': cryptos
+            'symbol': self.cryptos_of_interest
         }
         try:
             response = self.session.get(url, params=parameters)
@@ -53,16 +35,11 @@ class Api:
         
     
     def parse_out_tickers_and_prices(self, data):
-        print()
-        for ticker in self.cryptos_of_interest:
+        tickers = self.cryptos_of_interest.split(",")
+
+        for ticker in tickers:
             self.print_ticker_and_price(data, ticker)
     
     def print_ticker_and_price(self, data, ticker):
-        price = data["data"][ticker]['quote']['USD']['price']
+        price = data['data'][ticker]['quote']['USD']['price']
         print(ticker + ": " + str(round(price, 2)))
-
-
-
-
-    
-
