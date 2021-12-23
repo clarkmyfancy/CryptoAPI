@@ -11,9 +11,3 @@ def getCryptosOfInterest():
     cryptos = file.read()
     file.close()
     return cryptos
-
-def getUsers():
-    file = open("Database/Users.txt", "r")
-    contents = file.read()
-    file.close()
-    return contents
