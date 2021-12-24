@@ -11,3 +11,9 @@ def getCryptosOfInterest():
     cryptos = file.read()
     file.close()
     return cryptos
+
+def addToCryptosOfInterest(ticker):
+    file = open("Database/CryptosOfInterest.txt", "a")
+    thing = str(',' + ticker)
+    file.write(thing)
+    file.close()
