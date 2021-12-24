@@ -2,10 +2,7 @@
 
 
 ### Setup
-The API hits the coinmarketcap api. 
-In order to do that you need an API-key
-It's like practicing good coding standards by not putting secrets in the code repo.
-In order to use the API you need a key
+The API hits the coinmarketcap api. In order to do that you need an API Key. 
 
 For security reasons, an API key should not be stored in the code repo, so you have to get your own.
 1. Go to [the CoinMarketCap API website](https://coinmarketcap.com/api/) and login to your Developers account. If you don't have one then create an account. 
