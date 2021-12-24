@@ -16,30 +16,31 @@ class Api:
         self.session = Session()
         self.session.headers.update(self.headers)
 
-        self.cryptos_of_interest = getCryptosOfInterest()
-
-
-    def getQuotes(self):
+    def getQuotes(self, cryptos_of_interest):
 
         url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'  
         
         parameters = {
-            'symbol': self.cryptos_of_interest
+            'symbol': cryptos_of_interest
         }
         try:
             response = self.session.get(url, params=parameters)
             data = json.loads(response.text)
-            self.parse_out_tickers_and_prices(data)
+            return self.parse_out_tickers_and_prices(data, cryptos_of_interest)
         except (ConnectionError, Timeout, TooManyRedirects) as e:
             print(e)
         
     
-    def parse_out_tickers_and_prices(self, data):
-        tickers = self.cryptos_of_interest.split(",")
-
+    def parse_out_tickers_and_prices(self, data, cryptos_of_interest):
+        tickers = cryptos_of_interest.split(",")
+        thing = []
         for ticker in tickers:
-            self.print_ticker_and_price(data, ticker)
+            x = self.format_ticker_and_price(data, ticker)
+            thing.append(x)
+        return thing
+            
     
-    def print_ticker_and_price(self, data, ticker):
+    def format_ticker_and_price(self, data, ticker):
         price = data['data'][ticker]['quote']['USD']['price']
-        print(ticker + ": " + str(round(price, 2)))
+        price_truncated = round(price, 2)
+        return dict([(ticker, price_truncated)])
