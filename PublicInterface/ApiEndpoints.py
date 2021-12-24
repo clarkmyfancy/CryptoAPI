@@ -1,9 +1,6 @@
 
 from flask import Flask
-from flask_restful import Resource, Api, reqparse
-import pandas as pd
-import ast
-import json
+from flask_restful import Api
 
 from .Cryptos import Cryptos
 
@@ -13,6 +10,6 @@ class ApiEndpoints:
         self.app = Flask(__name__)
         self.api = Api(self.app)
 
-        self.api.add_resource(Cryptos, '/cryptos')
+        self.api.add_resource(Cryptos, '/api/cryptos')
 
         self.app.run()
