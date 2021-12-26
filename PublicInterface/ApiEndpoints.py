@@ -14,4 +14,4 @@ class ApiEndpoints:
         self.api.add_resource(Cryptos, '/api/cryptos')
         self.api.add_resource(CryptosAndPrices, '/api/get-prices')
 
-        self.app.run()
+        self.app.run(debug=True)
