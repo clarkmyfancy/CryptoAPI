@@ -10,4 +10,6 @@ class CryptosAndPrices(Resource):
     def get(self):
         api = Api()
         cryptos = getCryptosOfInterest()
-        return { 'data': list(api.getQuotes(cryptos))}, 200
+        cryptos_with_prices = api.getQuotes(cryptos)
+        results = list(cryptos_with_prices)
+        return { 'data': results}, 200
