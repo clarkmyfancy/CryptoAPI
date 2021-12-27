@@ -8,11 +8,10 @@ class Cryptos(Resource):
         contents = getCryptosOfInterest()
         return { "data": contents }, 200
 
-    def post(self):
+    def put(self):
         parser = reqparse.RequestParser()
         parser.add_argument('new-token', required=True)
 
         args = parser.parse_args()
         addToCryptosOfInterest(args['new-token'])
-        return None, 200
-# # return {'data': data}, 200  #
+        return None, 201
