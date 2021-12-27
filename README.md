@@ -18,3 +18,8 @@ For security reasons, an API key should not be stored in the code repo, so you h
 ```
 5. Copy the API Key you got from the CoinMarketCap site and paste it between the quotes. 
 6. Save that and now the api will work
+
+
+## Testing
+in the root directory -> 
+python3 -m unittest discover . "*_test.py"
