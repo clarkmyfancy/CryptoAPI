@@ -1,7 +1,8 @@
 # CryptoAPI
 
+---
 
-### Setup
+## Setup
 
 ### 3rd party api hookup
 The API hits the coinmarketcap api. In order to do that you need an API Key. 
@@ -21,33 +22,39 @@ For security reasons, an API key should not be stored in the code repo, so you h
 5. Copy the API Key you got from the CoinMarketCap site and paste it between the quotes. 
 6. Save that and now the api will work
 
-### project setup
+---
 
+### Initial Local Setup
+This project uses the virtual environment model for python execution. 
 
-# this will get everything setup for you to use this program on any computer
+1. Create a virtual environment (with the name "env")
+> python3 -m venv env
 
-# create a virtual environment
-python3 -m venv env
+2. Activate that environment 
 
-# activate that environment 
-## on a mac (and maybe linux (untested))
-source env/bin/activate
+##### If you're on a Mac (and maybe linux (untested)) run this in your terminal
+> source env/bin/activate
 
-## on windows
+##### ...And if you're on Windows
+> .\env\Scripts\Activate.ps1
 
-// you might have to run this command to modify your script execution policy
-```
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
-``` 
-then run -> `.\env\Scripts\Activate.ps1` and you should be in the necessary virtual environment
+If you run into any trouble executing the above command, run the following command in your powershell, then retry the above command
+> Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 
-# install necessary packages
-// inside the new environment you just setup run the command -> pip install -r Dependencies.txt 
+3. Install necessary external library dependencies by running the following command inside the virtual environment
+> pip install -r Dependencies.txt 
 
-# when you're all done
-# run the command inside of the environment "deactivate" and you'll be good to go
+()()()
+#### run the command inside of the environment "deactivate" and you'll be exited gracefully
+
+---
 
 ## Testing
-in the root directory -> 
-python3 -m unittest discover . "*_test.py"
+From the root of the project run
+
+### On mac
+> python3 -m unittest discover . "*_test.py"
+
+### On Windows
+> python -m unittest discover . "*_test.py"
 
