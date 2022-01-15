@@ -16,8 +16,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 then run -> `.\env\Scripts\Activate.ps1` and you should be in the necessary virtual environment
 
 # install necessary packages
-# ...
-# ...
+// inside the new environment you just setup run the command -> pip install -r Dependencies.txt 
 
 # when you're all done
 # run the command inside of the environment "deactivate" and you'll be good to go
