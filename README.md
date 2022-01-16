@@ -35,7 +35,7 @@ This project uses the virtual environment model for python execution.
 ##### If you're on a Mac (and maybe linux (untested)) run this in your terminal
 > source env/bin/activate
 
-##### ...And if you're on Windows
+##### ...And if you're on Windows (using Powershell)
 > .\env\Scripts\Activate.ps1
 
 If you run into any trouble executing the above command, run the following command in your powershell, then retry the above command
