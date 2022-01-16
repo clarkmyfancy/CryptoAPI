@@ -57,4 +57,5 @@ From the root of the project run
 
 ### On Windows
 > python -m unittest discover . "*_test.py"
+> python -m unittest discover ./HowItDoesIt/Databridge "Databridge_test.py"
 
