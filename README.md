@@ -2,6 +2,13 @@
 
 ---
 
+## Startup
+
+1. clone and then `cd` into the repo
+3. (optional) setup and enter your virtual environment if you want
+4. run `pip3 install -r Dependencies.txt`
+5. start api with `python3 main.py`
+
 ## Setup
 
 ### 3rd party api hookup
