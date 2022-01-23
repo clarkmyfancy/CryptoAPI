@@ -9,8 +9,8 @@ The API hits the coinmarketcap api. In order to do that you need an API Key.
 
 The API Key isn't stored here, you'll have to get your own.
 1. Go to [the CoinMarketCap API website](https://coinmarketcap.com/api/) and login to your Developers account. If you don't have one then create an account. 
-2. When you get logged in, go to the Overview Panel and find the API Key. The api won't work without it.  Copy The API key 
-3. Take that key and now in the project directory, navigate to CryptoAPI/CoinMarketCapApi and create a file called "secrets.json"
+2. When you get logged in, go to the Overview Panel and find the API Key. Copy The API key or put it aside for later
+3. Now over in the project's directory, navigate to CryptoAPI/CoinMarketCapApi and create a file called "secrets.json"
 4. Add the following code to that file.
 
 ```
