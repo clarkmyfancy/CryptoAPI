@@ -10,7 +10,7 @@ jobs:
       - run: 
           name: figure out working dir
           command: |
-            ls
+            echo $CIRCLE_WORKING_DIRECTORY
       - run:
           name: Setting up environment
           command: |
