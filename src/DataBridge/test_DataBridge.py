@@ -1,6 +1,6 @@
 import unittest
 
-from DataBridge import DataBridge
+from src.DataBridge import DataBridge
 
 class Test_DataBridge(unittest.TestCase):
     def setUp(self):

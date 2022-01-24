@@ -1,6 +1,6 @@
 from flask_restful import Resource, reqparse
 
-from DataBridge.DataBridge import getCryptosOfInterest, addToCryptosOfInterest
+from src.DataBridge.DataBridge import getCryptosOfInterest, addToCryptosOfInterest
 
 class Cryptos(Resource):
 
