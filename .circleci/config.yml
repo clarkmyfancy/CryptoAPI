@@ -9,7 +9,8 @@ jobs:
     steps:
       - run: 
           name: figure out working dir
-          command: ls
+          command: |
+            ls
       - run:
           name: Setting up environment
           command: |
