@@ -1,4 +1,4 @@
-from PublicInterface.ApiEndpoints import ApiEndpoints
+from src.PublicInterface.ApiEndpoints import ApiEndpoints
 
 
 def main():
