@@ -8,11 +8,6 @@ jobs:
       - image: circleci/python:3.9
     steps:
       - checkout
-      - run: 
-          name: figure out working dir
-          command: |
-            echo $CIRCLE_WORKING_DIRECTORY
-            ls
       - run:
           name: Setting up environment
           command: |
@@ -22,7 +17,7 @@ jobs:
       - run:
           name: Running tests
           command: |
-            . env/bin/activate
+            source env/bin/activate
             python3 -m unittest
 
 workflows:
