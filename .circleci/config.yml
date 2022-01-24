@@ -1,0 +1,30 @@
+version: 2.1
+
+# Define a job to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+jobs:
+  build_and_test:
+    docker:
+      - image: circleci/python:3.9
+    steps:
+      - checkout
+      - run:
+          name: Setting up environment
+          command: |
+            python3 -m venv env
+            source env/bin/activate
+            pip3 install -r Dependencies.txt
+      - run: 
+          name: Creating secrets file
+          command: | 
+            touch CoinMarketCapApi/secrets.json
+            echo "{\"api-key\": \"c564c57f-289b-48e0-b2c3-9e03866efdf6\"}" >> CoinMarketCapApi/secrets.json
+      - run:
+          name: Running tests
+          command: |
+            python3 -m unittest
+
+workflows:
+  build-and-run:
+    jobs:
+      - build_and_test
