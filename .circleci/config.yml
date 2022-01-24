@@ -17,6 +17,7 @@ jobs:
       - run: 
           name: Creating secrets file
           command: | 
+            touch CoinMarketCapApi/secrets.json
             echo {"api-key": "c564c57f-289b-48e0-b2c3-9e03866efdf6"} >> /CoinMarketCapApi/secrets.json
       - run:
           name: Running tests
