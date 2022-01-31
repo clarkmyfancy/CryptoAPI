@@ -2,8 +2,8 @@ from django.urls import path
 
 from . import views
 
+app_name = 'prices'
 urlpatterns = [
-    path('', views.index, name='index'),
-    # /prices/btc
-    path('<str:name>/', views.single, name="get_single_crypto"),
+    path('', views.IndexView.as_view(), name='index'),
+    path('<slug:ticker>/', views.DetailView.as_view(), name="get_single_crypto"),
 ]

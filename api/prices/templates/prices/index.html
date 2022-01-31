@@ -2,10 +2,10 @@
     <ul>
     {% for crypto in cryptos %}
         <li>
-            <a href="/prices/{{ crypto.name }}/">{{ crypto.name }}</a>
+            <a href="{% url 'prices:get_single_crypto' crypto.ticker %}">{{ crypto.name }}</a>
         </li>
     {% endfor %}
     </ul>
 {% else %}
-    <p>that price doesn't exist</p>
+    <p>That crypto doesn't exist</p>
 {% endif %}
