@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'dashboard.apps.DashboardConfig',
     'prices.apps.PricesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
