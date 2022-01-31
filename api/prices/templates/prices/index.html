@@ -1,0 +1,11 @@
+{% if cryptos %}
+    <ul>
+    {% for crypto in cryptos %}
+        <li>
+            <a href="/prices/{{ crypto.name }}/">{{ crypto.name }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>that price doesn't exist</p>
+{% endif %}
