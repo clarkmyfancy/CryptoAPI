@@ -4,6 +4,9 @@ secrets*
 # Don't include MacOS folder information
 .DS_Store
 
+# Don't include Visual Studio Code stuff
+.vscode
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
