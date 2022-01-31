@@ -3,4 +3,5 @@ flask_restful
 requests
 
 django
+django-heroku
 gunicorn
